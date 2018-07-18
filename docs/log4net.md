@@ -88,7 +88,7 @@ If you want to change some of the fields or add some of your own, inherit the ap
 ```C#
 	public class MyAppLogzioAppender : LogzioAppender
 	{
-		protected override void ExtendValues(LoggingEvent loggingEvent, Dictionary<string, string> values)
+		protected override void ExtendValues(LoggingEvent loggingEvent, Dictionary<string, object> values)
 		{
 			values["logger"] = "MyPrefix." + values["logger"];
 			values["myAppClientId"] = new ClientIdProvider().Get();
